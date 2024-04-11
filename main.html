@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>the key to generational wealth</title>
+<style>
+    body {
+        background-color: black;
+        color: white;
+        font-family: monospace;
+        text-align: center;
+    }
+    .slot-machine {
+        display: inline-block;
+        background: #333;
+        padding: 10px;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+    .reel {
+        display: inline-block;
+        width: 1em;
+        height: 1em;
+        font-size: 2rem;
+        margin: 0 5px;
+    }
+    #balance {
+        font-size: 1.5rem;
+        color: #FFD700;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: white;
+        color: black;
+        border: none;
+        cursor: pointer;
+    }
+    #betAmount {
+        font-size: 1rem;
+        padding: 5px;
+        margin-top: 10px;
+        width: 80px;
+    }
+</style>
+</head>
+<body>
+<h1>the key to generational wealth</h1>
+<div id="slotMachine" class="slot-machine">
+    <div class="reel" id="reel1">🍒</div>
+    <div class="reel" id="reel2">🍋</div>
+    <div class="reel" id="reel3">🔔</div>
+</div>
+<div id="balance">Balance: 100</div>
+<input type="number" id="betAmount" value="10" min="1" max="100"/>
+<button onclick="spin()">Spin Reels</button>
+
+<script>
+const reels = [
+    document.getElementById('reel1'),
+    document.getElementById('reel2'),
+    document.getElementById('reel3')
+];
+const symbols = ['7️⃣', '🍒', '🍋', '🔔', '💎', '🧲'];
+let balance = 100; // Starting balance
+const balanceElement = document.getElementById('balance');
+const betInput = document.getElementById('betAmount');
+
+function updateBalanceDisplay() {
+    balanceElement.textContent = `Balance: ${balance}`;
+}
+
+function getRandomSymbol() {
+    return symbols[Math.floor(Math.random() * symbols.length)];
+}
+
+function calculateWinnings(bet, sameSymbols) {
+    if (sameSymbols === 3) {
+        return bet * 2; // 3 of the same symbol wins 2x the bet
+    } else if (sameSymbols === 2) {
+        return Math.round(bet * 1.5); // 2 of the same symbol wins 1.5x the bet
+    }
+    return 0; // No win
+}
+
+function spin() {
+    const bet = parseInt(betInput.value, 10);
+    if (isNaN(bet) || bet > balance || bet <= 0) {
+        alert('Invalid bet amount. Please bet an amount within your balance.');
+        return;
+    }
+
+    balance -= bet; // Deduct the bet amount
+    updateBalanceDisplay();
+    
+    let spinsLeft = 20;
+    let spinResults = [];
+
+    const spinInterval = setInterval(() => {
+        spinResults = []; // Reset spin results for each spin
+        reels.forEach(reel => {
+            const symbol = getRandomSymbol();
+            spinResults.push(symbol);
+            reel.textContent = symbol;
+        });
+        
+        if (spinsLeft <= 0) {
+            clearInterval(spinInterval);
+            const sameSymbols = spinResults.filter((v, i, a) => a.indexOf(v) === i).length;
+            const winnings = calculateWinnings(bet, 3 - sameSymbols + 1); // Calculate winnings based on the number of same symbols
+            balance += winnings; // Update balance with winnings
+            updateBalanceDisplay();
+        }
+        spinsLeft--;
+    }, 100);
+}
+
+updateBalanceDisplay();
+</script>
+</body>
+</html>
