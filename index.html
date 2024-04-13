@@ -16,114 +16,144 @@
     .content, .formulas {
         margin: 10px;
         padding: 20px;
-        border: 2px solid #21c55e; /* Highlighting borders in green */
+        border: 2px solid #21c55e;
         width: 48%;
         height: 95vh;
         overflow-y: scroll;
     }
-    h1, h2, h3, p, li {
-        border-bottom: 1px solid #333333;
-        padding-bottom: 10px;
+    .section {
+        margin-bottom: 10px;
+        cursor: pointer;
     }
-    h1 {
-        color: #21c55e;
-        font-size: 24px;
-    }
-    h2, h3 {
+    .section h2 {
         color: #21c55e;
         font-size: 20px;
     }
+    .section .content {
+        display: none;
+        padding: 10px;
+        border-top: 1px solid #333;
+    }
     .highlight {
-        background-color: #21c55e; /* Green background for keywords */
-        color: #000000; /* Black color for text */
+        background-color: #21c55e;
+        color: #000000;
         padding: 0 5px;
     }
     .formula {
-        color: #ff6347; /* Tomato color for formulas */
+        color: #ff6347;
         font-weight: bold;
     }
-    table {
-        width: 100%;
+    ul {
+        list-style-type: none;
+        padding-left: 20px;
+    }
+    table, th, td {
+        border: 1px solid #ffffff;
         border-collapse: collapse;
     }
     th, td {
-        border: 1px solid #ffffff;
         padding: 8px;
         text-align: left;
-        color: #FFFFFF; /* White color for table text for readability */
-    }
-    th {
-        background-color: #21c55e; /* Green background for headers in tables */
-    }
-    ul {
-        list-style-type: none; /* Removing bullets from lists */
     }
 </style>
+<script>
+function toggleContent(id) {
+    var content = document.getElementById(id);
+    if (content.style.display === 'block') {
+        content.style.display = 'none';
+    } else {
+        content.style.display = 'block';
+    }
+}
+</script>
 </head>
 <body>
 
 <div class="content">
     <h1>Hydrology & Hydraulics Detailed Topics</h1>
 
-    <h2>1. What is Hydrology?</h2>
-    <p>Hydrology studies the <span class="highlight">properties, distribution, and management</span> of water on Earth, including its environmental and engineering applications.</p>
+    <div class="section" onclick="toggleContent('hydrology')">
+        <h2>1. What is Hydrology?</h2>
+        <div id="hydrology" class="content">
+            <p>Hydrology studies the <span class="highlight">properties, distribution, and management</span> of water on Earth, including its environmental and engineering applications.</p>
+        </div>
+    </div>
 
-    <h2>2. Hydrological Cycle Explained</h2>
-    <p>The hydrological cycle consists of processes such as <span class="highlight">evaporation, transpiration, condensation, precipitation, and infiltration.</span></p>
+    <div class="section" onclick="toggleContent('cycle')">
+        <h2>2. Hydrological Cycle Explained</h2>
+        <div id="cycle" class="content">
+            <p>The hydrological cycle consists of processes such as <span class="highlight">evaporation, transpiration, condensation, precipitation, and infiltration.</span></p>
+        </div>
+    </div>
 
-    <h2>3. Water Flow</h2>
-    <p>Key processes include:</p>
-    <ul>
-        <li><span class="highlight">Interception</span>: The capture of water by plants or other structures before it hits the ground.</li>
-        <li><span class="highlight">Infiltration</span>: The process of water soaking into subterranean reservoirs.</li>
-        <li><span class="highlight">Surface Runoff</span>: Water that flows over the surface into bodies of water.</li>
-        <li><span class="highlight">Percolation</span>: The movement of water through soil particles and rocks.</li>
-    </ul>
+    <div class="section" onclick="toggleContent('waterFlow')">
+        <h2>3. Water Flow</h2>
+        <div id="waterFlow" class="content">
+            <ul>
+                <li><span class="highlight">Interception</span>: The capture of water by plants or other structures before it hits the ground.</li>
+                <li><span class="highlight">Infiltration</span>: The process of water soaking into subterranean reservoirs.</li>
+                <li><span class="highlight">Surface Runoff</span>: Water that flows over the land.</li>
+                <li><span class="highlight">Percolation</span>: Movement of water through soil and rocks.</li>
+            </ul>
+        </div>
+    </div>
 
-    <h2>4. Rainfall Metrics</h2>
-    <p>Rainfall is quantified by its <span class="highlight">intensity, duration, and frequency</span>. These factors are crucial in understanding flood dynamics and water resource management.</p>
+    <div class="section" onclick="toggleContent('rainfallMetrics')">
+        <h2>4. Rainfall Metrics</h2>
+        <div id="rainfallMetrics" class="content">
+            <p>Rainfall is quantified by its <span class="highlight">intensity, duration, and frequency</span>. These factors are crucial in understanding flood dynamics and water resource management.</p>
+        </div>
+    </div>
 
-    <h2>5. Measuring Techniques</h2>
-    <p>Techniques include using <span class="highlight">rain gauges</span> and advanced hydrological modeling to predict and measure rainfall and runoff patterns.</p>
+    <div class="section" onclick="toggleContent('measuringTechniques')">
+        <h2>5. Measuring Techniques</h2>
+        <div id="measuringTechniques" class="content">
+            <p>Techniques include using <span class="highlight">rain gauges</span> and advanced hydrological modeling to predict and measure rainfall and runoff patterns.</p>
+        </div>
+    </div>
 
-    <h2>6. Impact of Urbanization</h2>
-    <p>Urban development significantly affects natural water flow, leading to increased <span class="highlight">runoff, reduced infiltration,</span> and heightened flood risks.</p>
+    <div class="section" onclick="toggleContent('urbanizationImpact')">
+        <h2>6. Impact of Urbanization</h2>
+        <div id="urbanizationImpact" class="content">
+            <p>Urban development significantly affects natural water flow, leading to increased <span class="highlight">runoff, reduced infiltration,</span> and heightened flood risks.</p>
+        </div>
+    </div>
 
-    <h2>7. Environmental Considerations</h2>
-    <p>Environmental impact assessments are necessary to understand the potential effects of hydro projects and urban planning on natural ecosystems.</p>
+    <div class="section" onclick="toggleContent('environmentalCons')">
+        <h2>7. Environmental Considerations</h2>
+        <div id="environmentalCons" class="content">
+            <p>Environmental impact assessments are necessary to understand the potential effects of hydro projects and urban planning on natural ecosystems.</p>
+        </div>
+    </div>
 
-    <h2>8. Drainage and Sewage</h2>
-    <p>Efficient drainage systems are crucial for managing water runoff in urban environments, reducing pollution and preventing flood events.</p>
+    <div class="section" onclick="toggleContent('drainageSewage')">
+        <h2>8. Drainage and Sewage</h2>
+        <div id="drainageSewage" class="content">
+            <p>Efficient drainage systems are crucial for managing water runoff in urban environments, reducing pollution and preventing flood events.</p>
+        </div>
+    </div>
 
-    <h2>9. Advanced Hydrological Studies</h2>
-    <p>These involve sophisticated modeling techniques to simulate water movement and predict future scenarios based on various environmental changes and urban developments.</p>
+    <div class="section" onclick="toggleContent('hydroStudies')">
+        <h2>9. Advanced Hydrological Studies</h2>
+        <div id="hydroStudies" class="content">
+            <p>These involve sophisticated modeling techniques to simulate water movement and predict future scenarios based on various environmental changes and urban developments.</p>
+        </div>
+    </div>
 </div>
 
 <div class="formulas">
     <h1>Formulas & Calculations</h1>
-
-    <h2>Rainfall and Runoff</h2>
-    <p class="formula">Q = P x I x A</p>
+    <p class="formula">Q = P x I x A (Rational Method Formula)</p>
     <p class="formula">Q = Runoff Quantity, P = Runoff Coefficient, I = Rainfall Intensity, A = Area</p>
-
-    <h2>Hydrological Cycle</h2>
-    <p class="formula">E = P - R - I</p>
+    <p class="formula">E = P - R - I (Hydrological Cycle)</p>
     <p class="formula">E = Evapotranspiration, P = Precipitation, R = Runoff, I = Infiltration</p>
-
-    <h2>Water Flow Formulas</h2>
-    <p class="formula">V = K x (I^n)</p>
+    <p class="formula">V = K x (I^n) (Water Flow Formula)</p>
     <p class="formula">V = Flow Velocity, K = Flow Constant, I = Hydraulic Gradient, n = Flow Exponent</p>
-
-    <h2>Drainage Design</h2>
-    <p class="formula">Q = (1/n) x A x R^(2/3) x S^(1/2)</p>
+    <p class="formula">Q = (1/n) x A x R^(2/3) x S^(1/2) (Drainage Design)</p>
     <p class="formula">n = Manning’s Coefficient, A = Cross-sectional Area, R = Hydraulic Radius, S = Slope</p>
-
-    <h2>Flood Estimation</h2>
-    <p class="formula">T = (P-2S)/(3S)</p>
+    <p class="formula">T = (P-2S)/(3S) (Flood Estimation)</p>
     <p class="formula">T = Return Period, P = Probability of Occurrence, S = Standard Deviation</p>
-
-    <h2>General Engineering Applications</h2>
-    <p class="formula">D = V x T</p>
+    <p class="formula">D = V x T (General Engineering Application)</p>
     <p class="formula">D = Distance Traveled by Water, V = Velocity, T = Time</p>
 </div>
 
