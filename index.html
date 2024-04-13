@@ -20,12 +20,21 @@
         width: 48%;
         overflow-y: auto;
         height: calc(100% - 40px);
+        padding: 20px;
     }
     h1, h2, h3, p, li {
-        padding: 2px;
+        margin: 5px 0;
     }
-    h1, h2, h3 {
+    h1 {
         color: #21c55e;
+        font-size: 24px;
+    }
+    h2, h3 {
+        color: #21c55e;
+        font-size: 20px;
+    }
+    p, li {
+        font-size: 16px;
     }
     .highlight {
         background-color: #21c55e;
@@ -33,10 +42,12 @@
         padding: 0 5px;
     }
     .formula {
-        color: #ff6347; /* Using a red color to make formulas distinct */
+        color: #ff6347; /* Distinct color for formulas */
+        font-weight: bold;
     }
     ul {
-        padding-left: 20px;
+        list-style-type: none;
+        padding: 0;
     }
     table, th, td {
         border: 1px solid #ffffff;
@@ -52,46 +63,81 @@
 
 <div class="content">
     <h1>Hydrology & Hydraulics Overview</h1>
-    <h2>What is Hydrology?</h2>
-    <p>Hydrology is the <span class="highlight">scientific study of water’s properties, distribution, and effects</span> on the earth’s surface, in the soil, and in the atmosphere.</p>
+    <h2>1. Introduction to Hydrology</h2>
+    <p><span class="highlight">Hydrology</span> is the scientific study of water's properties, distribution, and effects on the earth's surface, soils, and atmosphere. It encompasses the study of the hydrological cycle, water resources, and environmental watershed sustainability.</p>
 
-    <h2>Hydrological Cycle</h2>
-    <p>The cycle includes <span class="highlight">Water Vapour in clouds, Precipitation, Infiltration, Sea, Lakes, Rivers, Surface Runoff, Interception, Evaporation, and Evapotranspiration.</span></p>
-
-    <h2>Where does the water go?</h2>
+    <h2>2. The Hydrological Cycle</h2>
+    <p>This cycle describes the continuous movement of water on, above, and below the surface of the Earth. The process is significant due to its role in the distribution of water resources.</p>
     <ul>
-        <li><span class="highlight">Interception</span> - Precipitation is abstracted by vegetation or small surface depressions.</li>
-        <li><span class="highlight">Infiltration</span> - Precipitation seeps through the earth’s surface and percolates downward.</li>
-        <li><span class="highlight">Evapotranspiration</span> - Water absorbed by vegetation and then vaporized back to the atmosphere.</li>
-        <li><span class="highlight">Surface Runoff</span> - Water flows over the ground’s surface to sea, rivers, and streams when precipitation rate exceeds infiltration and evapotranspiration rates.</li>
-        <li><span class="highlight">Evaporation</span> - Takes place at sea/water surfaces, replenishing water vapour in the atmosphere.</li>
+        <li><span class="highlight">Precipitation</span>: Moisture released from clouds.</li>
+        <li><span class="highlight">Interception</span>: Water caught by plant leaves.</li>
+        <li><span class="highlight">Infiltration</span>: Water soaks into the soil.</li>
+        <li><span class="highlight">Surface Runoff</span>: Water flows over the land.</li>
+        <li><span class="highlight">Evapotranspiration</span>: Water evaporates from surfaces and transpires from plants.</li>
     </ul>
 
-    <h2>Rainfall and Measurement</h2>
-    <p><span class="highlight">Rainfall volume</span> is calculated as Rainfall depth x area. Rainfall intensity affects hydrological factors such as infiltration and runoff rates.</p>
+    <h2>3. Water Movement</h2>
+    <p>Water moves in various ways, significantly affecting hydrological and environmental outcomes:</p>
+    <ul>
+        <li><span class="highlight">Throughfall</span> and <span class="highlight">Stemflow</span>: Water pathways in vegetation areas.</li>
+        <li><span class="highlight">Groundwater Flow</span>: Movement through soil layers and aquifers.</li>
+    </ul>
 
-    <h2>Hydrographs</h2>
-    <p>Hydrographs plot the rate of flow (discharge) versus time from a stream at a specific point, useful for analyzing the effects of rainfall over a period.</p>
+    <h2>4. Rainfall Analysis</h2>
+    <p>Understanding rainfall patterns is crucial for managing water resources and mitigating flood risks.</p>
+    <ul>
+        <li><span class="highlight">Intensity, Duration, and Frequency</span>: Key metrics that determine the impact of rainfall events.</li>
+        <li>Measurement Tools: <span class="highlight">Rain Gauges</span> collect and measure rainfall.</li>
+    </ul>
 
-    <h2>Stormwater Management</h2>
-    <p>Stormwater control facilities are essential to mitigate flooding and water pollution, requiring careful design to handle surface runoff effectively.</p>
+    <h2>5. Runoff Analysis</h2>
+    <p>Runoff is part of the water cycle, involving the flow of water from land to water bodies, and is influenced by several factors:</p>
+    <ul>
+        <li><span class="highlight">Soil type, land topography, and vegetation</span> are crucial in determining runoff volume and speed.</li>
+        <li>Methodologies like the <span class="highlight">Rational Method</span> are used to estimate peak discharge from small catchment areas.</li>
+    </ul>
 
-    <h2>Drainage Design & Layout</h2>
-    <p>Design considerations include the network of inlets and pipes designed for gravity flow towards streams or reservoirs, essential for urban infrastructure.</p>
+    <h2>6. Probability and Recurrence Intervals</h2>
+    <p>These concepts are essential in hydrological predictions:</p>
+    <ul>
+        <li><span class="highlight">Recurrence Interval</span>: The average time between events (like heavy rainfalls).</li>
+        <li><span class="highlight">Probability of Occurrence</span>: Calculated to assess the risk of hydrological events.</li>
+    </ul>
 
-    <h2>Development Impact on Land</h2>
-    <p>Urban development increases surface runoff and decreases infiltration, necessitating robust drainage systems to manage increased hydrological load.</p>
+    <h2>7. Stormwater Management</h2>
+    <p>Effective stormwater management is crucial for reducing runoff and improving water quality:</p>
+    <ul>
+        <li><span class="highlight">Detention and Retention Basins</span>: Structures that manage runoff and mitigate its effects.</li>
+    </ul>
+
+    <h2>8. Drainage Systems Design</h2>
+    <p>Drainage systems are designed to manage water efficiently, ensuring safety and functionality:</p>
+    <ul>
+        <li><span class="highlight">Hydraulic Design</span>: Considers factors like pipe flow capacity and network layout.</li>
+    </ul>
+
+    <h2>9. Hydrographs</h2>
+    <p>A hydrograph plots the rate of flow versus time for a given point on a stream or river, particularly useful for predicting future water scenarios.</p>
+
+    <h2>10. Environmental and Urban Impacts</h2>
+    <p>Development significantly affects hydrological systems:</p>
+    <ul>
+        <li><span class="highlight">Urbanization</span> increases runoff and reduces infiltration, exacerbating flood risks.</li>
+        <li>Mitigation Techniques: <span class="highlight">Green infrastructures</span> like permeable pavements and rain gardens.</li>
+    </ul>
 </div>
 
 <div class="formulas">
-    <h1>Formulas</h1>
-    <p class="formula">Qp = C x i x A</p>
-    <p class="formula">Qcapacity = V x A</p>
-    <p class="formula">tc = to + td</p>
-    <p class="formula">td = Flow Distance / Flow Velocity</p>
-    <p class="formula">V = (1/n) x R^(2/3) x S^(1/2)</p>
+    <h1>Key Formulas</h1>
+    <h3>General Formulas</h3>
+    <p class="formula">Qp = C x i x A (Rational Method Formula)</p>
     <p class="formula">Rainfall Volume = Rainfall Depth x Area</p>
-    <!-- More formulas can be added here -->
+    <h3>Hydrograph Related</h3>
+    <p class="formula">Q = A x V (Flow rate calculation)</p>
+    <p class="formula">tc = to + td (Time of concentration)</p>
+    <h3>Runoff Coefficients</h3>
+    <p class="formula">C (Urban areas) = 0.9 to 0.95</p>
+    <p class="formula">C (Rural areas) = 0.05 to 0.30 depending on vegetation and soil type</p>
 </div>
 
 </body>
