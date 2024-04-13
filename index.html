@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Complete Hydrology & Hydraulics Guide</title>
+<title>Complete Hydrology & Hydraulics Overview</title>
 <style>
     body {
         font-family: 'Courier New', monospace;
@@ -10,29 +10,24 @@
         background-color: #000000;
         padding: 20px;
         display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between;
-    }
-    .content, .formulas {
-        margin: 10px;
-        padding: 20px;
-        border: 2px solid #21c55e;
-        width: 48%;
-        height: 95vh;
-        overflow-y: scroll;
+        flex-direction: column;
+        justify-content: start;
+        overflow-y: auto;
     }
     .section {
-        margin-bottom: 10px;
-        cursor: pointer;
+        margin-bottom: 20px;
     }
-    .section h2 {
+    h2 {
         color: #21c55e;
-        font-size: 20px;
+        font-size: 24px;
+        margin-bottom: 5px;
     }
-    .section .content {
-        display: none;
+    .content {
+        display: block;
         padding: 10px;
         border-top: 1px solid #333;
+        font-size: 16px;
+        line-height: 1.6;
     }
     .highlight {
         background-color: #21c55e;
@@ -40,122 +35,131 @@
         padding: 0 5px;
     }
     .formula {
-        color: #ff6347;
+        color: #ff6347; /* Tomato color for formulas */
         font-weight: bold;
+        margin-left: 20px;
+    }
+    ul, p {
+        margin-left: 20px;
     }
     ul {
-        list-style-type: none;
-        padding-left: 20px;
-    }
-    table, th, td {
-        border: 1px solid #ffffff;
-        border-collapse: collapse;
-    }
-    th, td {
-        padding: 8px;
-        text-align: left;
+        list-style-type: circle;
     }
 </style>
-<script>
-function toggleContent(id) {
-    var content = document.getElementById(id);
-    if (content.style.display === 'block') {
-        content.style.display = 'none';
-    } else {
-        content.style.display = 'block';
-    }
-}
-</script>
 </head>
 <body>
 
-<div class="content">
-    <h1>Hydrology & Hydraulics Detailed Topics</h1>
+<h1>Hydrology & Hydraulics Detailed Topics and Formulas</h1>
 
-    <div class="section" onclick="toggleContent('hydrology')">
-        <h2>1. What is Hydrology?</h2>
-        <div id="hydrology" class="content">
-            <p>Hydrology studies the <span class="highlight">properties, distribution, and management</span> of water on Earth, including its environmental and engineering applications.</p>
-        </div>
-    </div>
-
-    <div class="section" onclick="toggleContent('cycle')">
-        <h2>2. Hydrological Cycle Explained</h2>
-        <div id="cycle" class="content">
-            <p>The hydrological cycle consists of processes such as <span class="highlight">evaporation, transpiration, condensation, precipitation, and infiltration.</span></p>
-        </div>
-    </div>
-
-    <div class="section" onclick="toggleContent('waterFlow')">
-        <h2>3. Water Flow</h2>
-        <div id="waterFlow" class="content">
-            <ul>
-                <li><span class="highlight">Interception</span>: The capture of water by plants or other structures before it hits the ground.</li>
-                <li><span class="highlight">Infiltration</span>: The process of water soaking into subterranean reservoirs.</li>
-                <li><span class="highlight">Surface Runoff</span>: Water that flows over the land.</li>
-                <li><span class="highlight">Percolation</span>: Movement of water through soil and rocks.</li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="section" onclick="toggleContent('rainfallMetrics')">
-        <h2>4. Rainfall Metrics</h2>
-        <div id="rainfallMetrics" class="content">
-            <p>Rainfall is quantified by its <span class="highlight">intensity, duration, and frequency</span>. These factors are crucial in understanding flood dynamics and water resource management.</p>
-        </div>
-    </div>
-
-    <div class="section" onclick="toggleContent('measuringTechniques')">
-        <h2>5. Measuring Techniques</h2>
-        <div id="measuringTechniques" class="content">
-            <p>Techniques include using <span class="highlight">rain gauges</span> and advanced hydrological modeling to predict and measure rainfall and runoff patterns.</p>
-        </div>
-    </div>
-
-    <div class="section" onclick="toggleContent('urbanizationImpact')">
-        <h2>6. Impact of Urbanization</h2>
-        <div id="urbanizationImpact" class="content">
-            <p>Urban development significantly affects natural water flow, leading to increased <span class="highlight">runoff, reduced infiltration,</span> and heightened flood risks.</p>
-        </div>
-    </div>
-
-    <div class="section" onclick="toggleContent('environmentalCons')">
-        <h2>7. Environmental Considerations</h2>
-        <div id="environmentalCons" class="content">
-            <p>Environmental impact assessments are necessary to understand the potential effects of hydro projects and urban planning on natural ecosystems.</p>
-        </div>
-    </div>
-
-    <div class="section" onclick="toggleContent('drainageSewage')">
-        <h2>8. Drainage and Sewage</h2>
-        <div id="drainageSewage" class="content">
-            <p>Efficient drainage systems are crucial for managing water runoff in urban environments, reducing pollution and preventing flood events.</p>
-        </div>
-    </div>
-
-    <div class="section" onclick="toggleContent('hydroStudies')">
-        <h2>9. Advanced Hydrological Studies</h2>
-        <div id="hydroStudies" class="content">
-            <p>These involve sophisticated modeling techniques to simulate water movement and predict future scenarios based on various environmental changes and urban developments.</p>
-        </div>
+<!-- Hydrology Overview -->
+<div class="section" id="hydroOverview">
+    <h2>1. Hydrology Overview</h2>
+    <div class="content">
+        <p>Hydrology is the scientific study of the movement, distribution, and properties of water on Earth, including its environmental impact. The hydrological cycle, which includes processes like evaporation, condensation, precipitation, infiltration, runoff, and transpiration, plays a central role in hydrology.</p>
     </div>
 </div>
 
-<div class="formulas">
-    <h1>Formulas & Calculations</h1>
-    <p class="formula">Q = P x I x A (Rational Method Formula)</p>
-    <p class="formula">Q = Runoff Quantity, P = Runoff Coefficient, I = Rainfall Intensity, A = Area</p>
-    <p class="formula">E = P - R - I (Hydrological Cycle)</p>
-    <p class="formula">E = Evapotranspiration, P = Precipitation, R = Runoff, I = Infiltration</p>
-    <p class="formula">V = K x (I^n) (Water Flow Formula)</p>
-    <p class="formula">V = Flow Velocity, K = Flow Constant, I = Hydraulic Gradient, n = Flow Exponent</p>
-    <p class="formula">Q = (1/n) x A x R^(2/3) x S^(1/2) (Drainage Design)</p>
-    <p class="formula">n = Manning’s Coefficient, A = Cross-sectional Area, R = Hydraulic Radius, S = Slope</p>
-    <p class="formula">T = (P-2S)/(3S) (Flood Estimation)</p>
-    <p class="formula">T = Return Period, P = Probability of Occurrence, S = Standard Deviation</p>
-    <p class="formula">D = V x T (General Engineering Application)</p>
-    <p class="formula">D = Distance Traveled by Water, V = Velocity, T = Time</p>
+<!-- Hydrological Cycle -->
+<div class="section" id="hydroCycle">
+    <h2>2. Hydrological Cycle</h2>
+    <div class="content">
+        <p>The hydrological cycle describes the continuous movement of water on, above, and below the surface of the Earth. It involves several stages:</p>
+        <ul>
+            <li><span class="highlight">Evaporation:</span> The process by which water changes from a liquid to a gas or vapor state due to heat energy from the sun.</li>
+            <li><span class="highlight">Condensation:</span> The process by which water vapor in the atmosphere cools and changes back into liquid form, forming clouds.</li>
+            <li><span class="highlight">Precipitation:</span> The release of condensed water from clouds in the form of rain, snow, sleet, or hail, which falls to the Earth's surface.</li>
+            <li><span class="highlight">Infiltration:</span> The process by which precipitation seeps into the soil and replenishes groundwater reserves.</li>
+            <li><span class="highlight">Runoff:</span> The movement of excess water over the land surface into rivers, lakes, and oceans, ultimately completing the cycle.</li>
+        </ul>
+    </div>
 </div>
+
+<!-- Water Movement Pathways -->
+<div class="section" id="waterMovement">
+    <h2>3. Water Movement Pathways</h2>
+    <div class="content">
+        <p>Water moves through various pathways on Earth's surface and subsurface, including interception by vegetation, infiltration into soil and groundwater, evapotranspiration from plants, and surface runoff into rivers and lakes. These pathways are integral to the hydrological cycle and have significant implications for water resource management and environmental sustainability.</p>
+    </div>
+</div>
+
+<!-- Rainfall Dynamics -->
+<div class="section" id="rainfallDynamics">
+    <h2>4. Rainfall Dynamics</h2>
+    <div class="content">
+        <p>Rainfall dynamics refer to the patterns and characteristics of precipitation events, including their measurement, calculation, and impact. Rainfall is typically quantified in terms of depth and intensity, which are crucial factors for understanding and predicting water availability, flood risks, and ecosystem dynamics.</p>
+    </div>
+</div>
+
+<!-- Statistical Analysis of Rainfall -->
+<div class="section" id="statisticalAnalysis">
+    <h2>5. Statistical Analysis of Rainfall</h2>
+    <div class="content">
+        <p>Statistical analysis of rainfall involves the use of mathematical and probabilistic methods to analyze historical rainfall data, predict future rainfall patterns, and assess associated risks such as floods and droughts. Techniques like event analysis, recurrence interval analysis, and intensity-duration-frequency (IDF) relationships are commonly employed for this purpose.</p>
+    </div>
+</div>
+
+<!-- Hydrograph Explanation -->
+<div class="section" id="hydrographExplanation">
+    <h2>6. Hydrograph Explanation</h2>
+    <div class="content">
+        <p>A hydrograph is a graphical representation of streamflow (discharge) over time at a specific location within a river or drainage basin. It provides valuable insights into the dynamics of water flow, including peak discharge, lag time, and variations in flow rates during rainfall events. Hydrographs are essential tools for hydrological analysis, flood forecasting, and water resource management.</p>
+    </div>
+</div>
+
+<!-- Stormwater Management Techniques -->
+<div class="section" id="stormwaterManagement">
+    <h2>7. Stormwater Management Techniques</h2>
+    <div class="content">
+        <p>Stormwater management involves the implementation of various strategies and practices to control, treat, and mitigate the adverse effects of stormwater runoff on the environment and human infrastructure. Techniques include green infrastructure, detention basins, permeable pavements, and best management practices (BMPs) aimed at reducing flooding, erosion, and pollution in urban and rural areas.</p>
+    </div>
+</div>
+
+<!-- Impact of Land Development -->
+<div class="section" id="landDevelopmentImpact">
+    <h2>8. Impact of Land Development</h2>
+    <div class="content">
+        <p>The impact of land development on hydrology and hydraulics refers to the alterations in water flow patterns, infiltration rates, and flood risks resulting from urbanization, deforestation, and other land-use changes. Increased impervious surfaces, altered flow velocities, and reduced infiltration capacity are among the primary consequences of land development, necessitating careful planning and management of water resources.</p>
+    </div>
+</div>
+
+<!-- Drainage Systems and Regulatory Standards -->
+<div class="section" id="drainageSystems">
+    <h2>9. Drainage Systems and Regulatory Standards</h2>
+    <div class="content">
+        <p>Drainage systems are infrastructure networks designed to manage stormwater runoff and prevent flooding in urban and rural areas. Regulatory standards and guidelines govern the design, construction, and maintenance of drainage systems to ensure public safety, environmental protection, and sustainable water management. Key aspects include minimum platform levels, drainage reserves, and compliance with local building codes and regulations.</p>
+    </div>
+</div>
+
+<!-- Formulas and Computational Concepts -->
+<div class="section" id="formulas">
+    <h2>Formulas and Computational Concepts</h2>
+    <div class="content">
+        <p>Formulas and computational concepts are fundamental to hydrology and hydraulics, enabling engineers and scientists to quantify and analyze various aspects of water movement, rainfall dynamics, and drainage system design. Some essential formulas include rainfall volume calculation, rational method for peak runoff estimation, hydrograph analysis, and design criteria for drainage systems.</p>
+        <ul>
+            <li><span class="highlight">Rainfall Volume Calculation Formula:</span> Rainfall Volume = Rainfall Depth × Area</li>
+            <li><span class="highlight">Rational Method for Peak Runoff Calculation Formula:</span> Qp = C × i × A</li>
+            <li><span class="highlight">Hydrograph and Discharge Formula:</span> Hydrograph, Peak Discharge, Base Flow</li>
+            <li><span class="highlight">Runoff Coefficient (C) Formula:</span> C = Qp / (i × A)</li>
+            <li><span class="highlight">Time of Concentration (tc) Formula:</span> tc = to + td</li>
+            <li><span class="highlight">Channel Flow Time (td) Formula:</span> td = Flow Distance / Flow Velocity</li>
+            <li><span class="highlight">Manning’s Equation for Flow Velocity:</span> V = (1 / n) * (R^(2/3)) * (S^(1/2))</li>
+            <li><span class="highlight">Design Criteria for Drainage Formula:</span> Drainage Capacity = Velocity × Cross-sectional Area</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ASCII Art -->
+<pre style="font-size: 20px; margin-top: 50px;">
+__/\\\________________________/\\\\\\_____/\\\\\\_______________________________________________________________________        
+ _\/\\\_______________________\////\\\____\////\\\_______________________________________________________________________       
+  _\/\\\__________________________\/\\\_______\/\\\__________________/\\\______________________________/\\\_____/\\\______      
+   _\/\\\_________/\\\\\\\\\_______\/\\\_______\/\\\_____/\\\\\\\\\\_\///___/\\/\\\\\\____/\\/\\\\\\___\///___/\\\\\\\\\\\_     
+    _\/\\\\\\\\\__\////////\\\______\/\\\_______\/\\\____\/\\\//////___/\\\_\/\\\////\\\__\/\\\////\\\___/\\\_\////\\\////__    
+     _\/\\\////\\\___/\\\\\\\\\\_____\/\\\_______\/\\\____\/\\\\\\\\\\_\/\\\_\/\\\__\//\\\_\/\\\__\//\\\_\/\\\____\/\\\______   
+      _\/\\\__\/\\\__/\\\/////\\\_____\/\\\_______\/\\\____\////////\\\_\/\\\_\/\\\___\/\\\_\/\\\___\/\\\_\/\\\____\/\\\_/\\__  
+       _\/\\\\\\\\\__\//\\\\\\\\/\\__/\\\\\\\\\__/\\\\\\\\\__/\\\\\\\\\\_\/\\\_\/\\\___\/\\\_\/\\\___\/\\\_\/\\\____\//\\\\\___ 
+        _\/////////____\////////\//__\/////////__\/////////__\//////////__\///__\///____\///__\///____\///__\///______\/////____
+</pre>
 
 </body>
 </html>
