@@ -2,28 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Comprehensive Hydrology & Hydraulics Overview</title>
+<title>Complete Hydrology & Hydraulics Guide</title>
 <style>
     body {
         font-family: 'Courier New', monospace;
         color: #FFFFFF;
         background-color: #000000;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        margin: 0;
         padding: 20px;
-        height: 100vh;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
     }
     .content, .formulas {
-        width: 48%;
-        overflow-y: auto;
-        height: calc(100% - 40px);
+        margin: 10px;
         padding: 20px;
+        border: 2px solid #21c55e; /* Highlighting borders in green */
+        width: 48%;
+        height: 95vh;
+        overflow-y: scroll;
     }
     h1, h2, h3, p, li {
-        margin: 5px 0;
+        border-bottom: 1px solid #333333;
+        padding-bottom: 10px;
     }
     h1 {
         color: #21c55e;
@@ -33,111 +33,98 @@
         color: #21c55e;
         font-size: 20px;
     }
-    p, li {
-        font-size: 16px;
-    }
     .highlight {
-        background-color: #21c55e;
-        color: #000000;
+        background-color: #21c55e; /* Green background for keywords */
+        color: #000000; /* Black color for text */
         padding: 0 5px;
     }
     .formula {
-        color: #ff6347; /* Distinct color for formulas */
+        color: #ff6347; /* Tomato color for formulas */
         font-weight: bold;
     }
-    ul {
-        list-style-type: none;
-        padding: 0;
-    }
-    table, th, td {
-        border: 1px solid #ffffff;
+    table {
+        width: 100%;
         border-collapse: collapse;
     }
     th, td {
+        border: 1px solid #ffffff;
         padding: 8px;
         text-align: left;
+        color: #FFFFFF; /* White color for table text for readability */
+    }
+    th {
+        background-color: #21c55e; /* Green background for headers in tables */
+    }
+    ul {
+        list-style-type: none; /* Removing bullets from lists */
     }
 </style>
 </head>
 <body>
 
 <div class="content">
-    <h1>Hydrology & Hydraulics Overview</h1>
-    <h2>1. Introduction to Hydrology</h2>
-    <p><span class="highlight">Hydrology</span> is the scientific study of water's properties, distribution, and effects on the earth's surface, soils, and atmosphere. It encompasses the study of the hydrological cycle, water resources, and environmental watershed sustainability.</p>
+    <h1>Hydrology & Hydraulics Detailed Topics</h1>
 
-    <h2>2. The Hydrological Cycle</h2>
-    <p>This cycle describes the continuous movement of water on, above, and below the surface of the Earth. The process is significant due to its role in the distribution of water resources.</p>
+    <h2>1. What is Hydrology?</h2>
+    <p>Hydrology studies the <span class="highlight">properties, distribution, and management</span> of water on Earth, including its environmental and engineering applications.</p>
+
+    <h2>2. Hydrological Cycle Explained</h2>
+    <p>The hydrological cycle consists of processes such as <span class="highlight">evaporation, transpiration, condensation, precipitation, and infiltration.</span></p>
+
+    <h2>3. Water Flow</h2>
+    <p>Key processes include:</p>
     <ul>
-        <li><span class="highlight">Precipitation</span>: Moisture released from clouds.</li>
-        <li><span class="highlight">Interception</span>: Water caught by plant leaves.</li>
-        <li><span class="highlight">Infiltration</span>: Water soaks into the soil.</li>
-        <li><span class="highlight">Surface Runoff</span>: Water flows over the land.</li>
-        <li><span class="highlight">Evapotranspiration</span>: Water evaporates from surfaces and transpires from plants.</li>
+        <li><span class="highlight">Interception</span>: The capture of water by plants or other structures before it hits the ground.</li>
+        <li><span class="highlight">Infiltration</span>: The process of water soaking into subterranean reservoirs.</li>
+        <li><span class="highlight">Surface Runoff</span>: Water that flows over the surface into bodies of water.</li>
+        <li><span class="highlight">Percolation</span>: The movement of water through soil particles and rocks.</li>
     </ul>
 
-    <h2>3. Water Movement</h2>
-    <p>Water moves in various ways, significantly affecting hydrological and environmental outcomes:</p>
-    <ul>
-        <li><span class="highlight">Throughfall</span> and <span class="highlight">Stemflow</span>: Water pathways in vegetation areas.</li>
-        <li><span class="highlight">Groundwater Flow</span>: Movement through soil layers and aquifers.</li>
-    </ul>
+    <h2>4. Rainfall Metrics</h2>
+    <p>Rainfall is quantified by its <span class="highlight">intensity, duration, and frequency</span>. These factors are crucial in understanding flood dynamics and water resource management.</p>
 
-    <h2>4. Rainfall Analysis</h2>
-    <p>Understanding rainfall patterns is crucial for managing water resources and mitigating flood risks.</p>
-    <ul>
-        <li><span class="highlight">Intensity, Duration, and Frequency</span>: Key metrics that determine the impact of rainfall events.</li>
-        <li>Measurement Tools: <span class="highlight">Rain Gauges</span> collect and measure rainfall.</li>
-    </ul>
+    <h2>5. Measuring Techniques</h2>
+    <p>Techniques include using <span class="highlight">rain gauges</span> and advanced hydrological modeling to predict and measure rainfall and runoff patterns.</p>
 
-    <h2>5. Runoff Analysis</h2>
-    <p>Runoff is part of the water cycle, involving the flow of water from land to water bodies, and is influenced by several factors:</p>
-    <ul>
-        <li><span class="highlight">Soil type, land topography, and vegetation</span> are crucial in determining runoff volume and speed.</li>
-        <li>Methodologies like the <span class="highlight">Rational Method</span> are used to estimate peak discharge from small catchment areas.</li>
-    </ul>
+    <h2>6. Impact of Urbanization</h2>
+    <p>Urban development significantly affects natural water flow, leading to increased <span class="highlight">runoff, reduced infiltration,</span> and heightened flood risks.</p>
 
-    <h2>6. Probability and Recurrence Intervals</h2>
-    <p>These concepts are essential in hydrological predictions:</p>
-    <ul>
-        <li><span class="highlight">Recurrence Interval</span>: The average time between events (like heavy rainfalls).</li>
-        <li><span class="highlight">Probability of Occurrence</span>: Calculated to assess the risk of hydrological events.</li>
-    </ul>
+    <h2>7. Environmental Considerations</h2>
+    <p>Environmental impact assessments are necessary to understand the potential effects of hydro projects and urban planning on natural ecosystems.</p>
 
-    <h2>7. Stormwater Management</h2>
-    <p>Effective stormwater management is crucial for reducing runoff and improving water quality:</p>
-    <ul>
-        <li><span class="highlight">Detention and Retention Basins</span>: Structures that manage runoff and mitigate its effects.</li>
-    </ul>
+    <h2>8. Drainage and Sewage</h2>
+    <p>Efficient drainage systems are crucial for managing water runoff in urban environments, reducing pollution and preventing flood events.</p>
 
-    <h2>8. Drainage Systems Design</h2>
-    <p>Drainage systems are designed to manage water efficiently, ensuring safety and functionality:</p>
-    <ul>
-        <li><span class="highlight">Hydraulic Design</span>: Considers factors like pipe flow capacity and network layout.</li>
-    </ul>
-
-    <h2>9. Hydrographs</h2>
-    <p>A hydrograph plots the rate of flow versus time for a given point on a stream or river, particularly useful for predicting future water scenarios.</p>
-
-    <h2>10. Environmental and Urban Impacts</h2>
-    <p>Development significantly affects hydrological systems:</p>
-    <ul>
-        <li><span class="highlight">Urbanization</span> increases runoff and reduces infiltration, exacerbating flood risks.</li>
-        <li>Mitigation Techniques: <span class="highlight">Green infrastructures</span> like permeable pavements and rain gardens.</li>
-    </ul>
+    <h2>9. Advanced Hydrological Studies</h2>
+    <p>These involve sophisticated modeling techniques to simulate water movement and predict future scenarios based on various environmental changes and urban developments.</p>
 </div>
 
 <div class="formulas">
-    <h1>Key Formulas</h1>
-    <h3>General Formulas</h3>
-    <p class="formula">Qp = C x i x A (Rational Method Formula)</p>
-    <p class="formula">Rainfall Volume = Rainfall Depth x Area</p>
-    <h3>Hydrograph Related</h3>
-    <p class="formula">Q = A x V (Flow rate calculation)</p>
-    <p class="formula">tc = to + td (Time of concentration)</p>
-    <h3>Runoff Coefficients</h3>
-    <p class="formula">C (Urban areas) = 0.9 to 0.95</p>
-    <p class="formula">C (Rural areas) = 0.05 to 0.30 depending on vegetation and soil type</p>
+    <h1>Formulas & Calculations</h1>
+
+    <h2>Rainfall and Runoff</h2>
+    <p class="formula">Q = P x I x A</p>
+    <p class="formula">Q = Runoff Quantity, P = Runoff Coefficient, I = Rainfall Intensity, A = Area</p>
+
+    <h2>Hydrological Cycle</h2>
+    <p class="formula">E = P - R - I</p>
+    <p class="formula">E = Evapotranspiration, P = Precipitation, R = Runoff, I = Infiltration</p>
+
+    <h2>Water Flow Formulas</h2>
+    <p class="formula">V = K x (I^n)</p>
+    <p class="formula">V = Flow Velocity, K = Flow Constant, I = Hydraulic Gradient, n = Flow Exponent</p>
+
+    <h2>Drainage Design</h2>
+    <p class="formula">Q = (1/n) x A x R^(2/3) x S^(1/2)</p>
+    <p class="formula">n = Manning’s Coefficient, A = Cross-sectional Area, R = Hydraulic Radius, S = Slope</p>
+
+    <h2>Flood Estimation</h2>
+    <p class="formula">T = (P-2S)/(3S)</p>
+    <p class="formula">T = Return Period, P = Probability of Occurrence, S = Standard Deviation</p>
+
+    <h2>General Engineering Applications</h2>
+    <p class="formula">D = V x T</p>
+    <p class="formula">D = Distance Traveled by Water, V = Velocity, T = Time</p>
 </div>
 
 </body>
