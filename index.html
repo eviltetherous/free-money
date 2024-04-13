@@ -6,67 +6,66 @@
 <title>Hydrology & Hydraulics Overview</title>
 <style>
     body { 
-        font-family: 'Courier New', monospace; /* Sets the font across the body to Courier New, a monospace font ideal for techy looks */
+        font-family: 'Courier New', monospace;
         margin: 0;
         padding: 0;
-        background-color: #121212; /* Dark grey background for the entire page */
-        color: #d0d0d0; /* Light grey text color for good contrast on dark background */
-        font-size: 16px; /* Sets a standard readable font size */
+        background-color: #121212;
+        color: #d0d0d0;
+        font-size: 16px;
+        display: flex;
+        flex-wrap: wrap;
     }
     header {
-        background-color: #0c5460; /* Dark teal background for the header */
-        color: #d0d0d0; /* Light grey text, matching the body text color */
-        padding: 10px 20px; /* Padding around the text to increase readability */
-        text-align: center; /* Centers the header text */
-        font-size: 24px; /* Larger font size for header to make it stand out */
-        letter-spacing: 1px; /* Adds spacing between characters for aesthetic purposes */
+        background-color: #0c5460;
+        color: #d0d0d0;
+        padding: 10px 20px;
+        text-align: center;
+        font-size: 24px;
+        letter-spacing: 1px;
+        width: 100%;
+    }
+    .main-content, .formulas {
+        flex: 1;
+        min-width: 300px; /* Minimum width of 300px before wrapping */
+        padding: 20px;
     }
     h1, h2 { 
-        color: #17a2b8; /* Cyan color for titles and subtitles for thematic consistency */
-    }
-    h1 {
-        margin-top: 0; /* Removes top margin from the first heading to keep layout tight */
+        color: #21c55e; /* Sharp green color */
     }
     h2 { 
-        border-bottom: 1px solid #17a2b8; /* Cyan bottom border for subtitles for visual separation */
-    }
-    p, li { 
-        font-family: 'Consolas', monospace; /* Consolas font for paragraphs and list items, maintaining the techy feel */
-        margin-left: 20px; /* Indents paragraphs and list items to visually separate from headings */
+        border-bottom: 2px solid #21c55e;
     }
     .highlight {
-        background-color: #ffffff; /* White background for highlighted text */
-        color: #000000; /* Black text on highlighted phrases to ensure they stand out */
-        padding: 2px 5px; /* Small padding to make highlights more pronounced */
-        border-radius: 5px; /* Rounded corners for aesthetic appeal */
-    }
-    table { 
-        width: 100%; /* Full-width tables for layout consistency */
-        margin-top: 10px; /* Space above tables for visual separation */
-        border-collapse: collapse; /* Collapses table borders into a single border for a cleaner look */
-    }
-    th, td { 
-        border: 1px solid #666; /* Lighter grey border for readability */
-        padding: 8px; /* Padding inside table cells for text alignment and spacing */
-        text-align: left; /* Aligns text to the left within cells */
-    }
-    th { 
-        background-color: #025995; /* Dark blue header cells for contrast against body cells */
-        color: #fff; /* White text for readability on dark background */
+        background-color: #ffffff;
+        color: #000000;
+        padding: 2px 5px;
+        border-radius: 5px;
     }
     .content { 
-        background-color: #222831; /* Very dark grey (almost black) for main content background */
-        padding: 15px; /* Padding inside the content div for spacing */
-        border-radius: 8px; /* Rounded corners on the content box */
-        box-shadow: 0 0 10px #000; /* Subtle shadow for 3D effect */
-        margin: 20px; /* Margin around the content box to separate from the document edges */
+        background-color: #222831;
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #000;
+        margin: 20px;
+        flex-grow: 1;
     }
-    .formula { 
-        background-color: #30475e; /* Dark blue for formula backgrounds for distinction */
-        color: #ececec; /* Off-white for high contrast and readability */
-        border-left: 5px solid #f05454; /* Bright red left border for emphasis and aesthetic */
-        padding: 5px; /* Padding around formulas to separate text from borders */
-        font-family: 'Courier New', monospace; /* Consistent monospace font for formulas */
+    .formulas {
+        background-color: #2a2a35;
+        color: #8df585; /* Lighter green for formulas for visibility */
+        padding: 15px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px #000;
+        margin: 20px;
+        border-left: 5px solid #21c55e; /* Sharp green border */
+    }
+    table, th, td {
+        border: 1px solid #666;
+        border-collapse: collapse;
+        padding: 8px;
+    }
+    th {
+        background-color: #025995;
+        color: #fff;
     }
 </style>
 </head>
@@ -74,57 +73,33 @@
 
 <header>HYDROLOGY</header>
 
-<div class="content">
-    <h1>Overview of Hydrology & Hydraulics</h1>
+<div class="main-content">
+    <div class="content">
+        <h1>Overview of Hydrology & Hydraulics</h1>
 
-    <h2>What is <span class="highlight">Hydrology</span>?</h2>
-    <p><span class="highlight">Hydrology</span> is the scientific study of water's properties, distribution, and effects on Earth's surface, soils, and atmosphere.</p>
+        <h2>What is <span class="highlight">Hydrology</span>?</h2>
+        <p><span class="highlight">Hydrology</span> is the scientific study of water's properties, distribution, and effects on Earth's surface, soils, and atmosphere.</p>
 
-    <h2><span class="highlight">Hydrological Cycle</span> Components</h2>
-    <p>Key processes include <span class="highlight">precipitation</span>, <span class="highlight">infiltration</span>, <span class="highlight">runoff</span>, <span class="highlight">interception</span>, <span class="highlight">evaporation</span>, and <span class="highlight">evapotranspiration</span>, among others.</p>
+        <h2><span class="highlight">Hydrological Cycle</span> Components</h2>
+        <p>Key processes include <span class="highlight">precipitation</span>, <span class="highlight">infiltration</span>, <span class="highlight">runoff</span>, <span class="highlight">interception</span>, <span class="highlight">evaporation</span>, and <span class="highlight">evapotranspiration</span>, among others.</p>
 
-    <h2>Formulas and Calculations</h2>
-    <ul>
-        <li><strong><span class="highlight">Rainfall Volume</span>:</strong> <span class="formula">Volume = Rainfall Depth x Area</span></li>
-        <li><strong><span class="highlight">Peak Runoff</span> (Rational Method):</strong> <span class="formula">Qp = C x i x A</span></li>
-        <li><strong><span class="highlight">Time of Concentration</span>:</strong> <span class="formula">tc = to + td</span></li>
-        <li><strong><span class="highlight">Channel Flow Time</span>:</strong> <span class="formula">td = Flow Distance / Flow Velocity</span></li>
-        <li><strong><span class="highlight">Manning’s Equation</span>:</strong> <span class="formula">V = (1/n) x R^(2/3) x S^(1/2)</span></li>
-        <li><strong><span class="highlight">Drainage System Capacity</span>:</strong> <span class="formula">Qcapacity = V x A</span></li>
-    </ul>
+        <h2><span class="highlight">Stormwater Management</span></h2>
+        <p>Management techniques focus on mitigating <span class="highlight">flood risks</span> and managing <span class="highlight">runoff</span>, especially in urban settings.</p>
 
-    <h2><span class="highlight">Hydrographs</span></h2>
-    <p>A <span class="highlight">hydrograph</span> plots the rate of flow versus time from a stream at a specific point. Factors such as <span class="highlight">peak discharge</span> and <span class="highlight">base flow</span> are critical for analysis.</p>
-
-    <h2><span class="highlight">Stormwater Management</span></h2>
-    <p>Management techniques focus on mitigating <span class="highlight">flood risks</span> and managing <span class="highlight">runoff</span>, especially in urban settings.</p>
-
-    <h2>Impact of <span class="highlight">Land Development</span></h2>
-    <p>Development increases <span class="highlight">surface runoff</span> and alters hydrological pathways, increasing <span class="highlight">flood risks</span> and necessitating robust stormwater systems.</p>
-
-    <h2>Design Criteria for <span class="highlight">Hydraulic Structures</span></h2>
-    <table>
-        <tr>
-            <th>Parameter</th>
-            <th>Value/Formula</th>
-            <th>Description</th>
-        </tr>
-        <tr>
-            <td>Minimum Velocity</td>
-            <td>1.0 m/s</td>
-            <td>Needed for self-cleansing.</td>
-        </tr>
-        <tr>
-            <td>Maximum Velocity</td>
-            <td>3.0 m/s</td>
-            <td>To prevent structural damage.</td>
-        </tr>
-        <tr>
-            <td>Freeboard</td>
-            <td>15% of depth</td>
-            <td>To prevent overflow and manage fluctuations.</td>
-        </tr>
-    </table>
+        <h2>Impact of <span class="highlight">Land Development</span></h2>
+        <p>Development increases <span class="highlight">surface runoff</span> and alters hydrological pathways, increasing <span class="highlight">flood risks</span> and necessitating robust stormwater systems.</p>
+    </div>
 </div>
+
+<div class="formulas">
+    <h2>Key Formulas</h2>
+    <p><strong>Rainfall Volume:</strong> <span class="highlight">Volume = Rainfall Depth x Area</span></p>
+    <p><strong>Peak Runoff (Rational Method):</strong> <span class="highlight">Qp = C x i x A</span></p>
+    <p><strong>Time of Concentration:</strong> <span class="highlight">tc = to + td</span></p>
+    <p><strong>Channel Flow Time:</strong> <span class="highlight">td = Flow Distance / Flow Velocity</span></p>
+    <p><strong>Manning’s Equation:</strong> <span class="highlight">V = (1/n) x R^(2/3) x S^(1/2)</span></p>
+    <p><strong>Drainage System Capacity:</strong> <span class="highlight">Qcapacity = V x A</span></p>
+</div>
+
 </body>
 </html>
