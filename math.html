@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Chapter One: Descriptive Statistics - Engineering Mathematics II</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script
+  id="MathJax-script"
+  async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
+</script>
+<style>
+    body {
+        font-family: 'Courier New', monospace;
+        color: #FFFFFF;
+        background-color: #000000;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        overflow-y: auto;
+    }
+    .section {
+        margin-bottom: 20px;
+    }
+    h2 {
+        color: #21c55e;
+        font-size: 24px;
+        margin-bottom: 5px;
+    }
+    .content {
+        display: block;
+        padding: 10px;
+        border-top: 1px solid #333;
+        font-size: 16px;
+        line-height: 1.6;
+    }
+    .highlight {
+        background-color: #21c55e;
+        color: #000000;
+        padding: 0 5px;
+    }
+    .formula {
+        color: #ff6347; /* Tomato color for formulas */
+        font-weight: bold;
+        margin-left: 20px;
+    }
+    ul, p {
+        margin-left: 20px;
+    }
+    ul {
+        list-style-type: circle;
+    }
+    pre {
+        color: #21c55e; /* Light green color for ASCII Art */
+    }
+</style>
+</head>
+<body>
+
+<h1>Chapter One: Descriptive Statistics</h1>
+
+<!-- Introduction to Descriptive Statistics -->
+<div class="section" id="introToDescriptiveStats">
+    <h2>1. Introduction to Descriptive Statistics</h2>
+    <div class="content">
+        <p>Descriptive statistics involves summarizing or describing a set of data. It includes calculating various measures such as the mean, median, mode, and standard deviation to provide insights into the data set.</p>
+    </div>
+</div>
+
+<!-- Data Types -->
+<div class="section" id="dataTypes">
+    <h2>2. Data Types</h2>
+    <div class="content">
+        <p>Data in statistics can be classified into different types:</p>
+        <ul>
+            <li><span class="highlight">Quantitative:</span> Numeric values making it possible to perform arithmetic operations (e.g., height, weight).</li>
+            <li><span class="highlight">Qualitative:</span> Descriptive data that cannot be measured in numbers (e.g., gender, nationality).</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Measures of Central Tendency -->
+<div class="section" id="centralTendency">
+    <h2>3. Measures of Central Tendency</h2>
+    <div class="content">
+        <p>These measures indicate the central point of a data set:</p>
+        <ul>
+            <li><span class="highlight">Mean (Arithmetic mean):</span> Sum of all data points divided by the number of points.</li>
+            <li><span class="highlight">Median:</span> The middle value in a list of numbers.</li>
+            <li><span class="highlight">Mode:</span> The most frequently occurring value in a data set.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Measures of Spread -->
+<div class="section" id="measuresOfSpread">
+    <h2>4. Measures of Spread</h2>
+    <div class="content">
+        <p>These measures describe the variability or spread of data points:</p>
+        <ul>
+            <li><span class="highlight">Range:</span> Difference between the highest and lowest values.</li>
+            <li><span class="highlight">Interquartile Range (IQR):</span> Measures the middle 50% of a data set, calculated as Q3 - Q1.</li>
+            <li><span class="highlight">Standard Deviation:</span> Indicates how much the observations differ from the mean.</li>
+            <li><span class="highlight">Variance:</span> The average of the squared differences from the Mean.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Graphical Summaries -->
+<div class="section" id="graphicalSummaries">
+    <h2>5. Graphical Summaries</h2>
+    <div class="content">
+        <p>Graphical representations such as the following are used to visualize data:</p>
+        <ul>
+            <li><span class="highlight">Histograms:</span> Show the frequency of data points within certain ranges.</li>
+            <li><span class="highlight">Box Plots:</span> Summarize data using the median, quartiles, and extremes.</li>
+            <li><span class="highlight">Scatter Plots:</span> Indicate the relationship between two variables.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Applications of Descriptive Statistics -->
+<div class="section" id="applicationsOfStats">
+    <h2>6. Applications of Descriptive Statistics</h2>
+    <div class="content">
+        <p>Descriptive statistics are used in various fields to facilitate understanding and decision-making. For example:</p>
+        <ul>
+            <li><span class="highlight">Business:</span> Market research, financial analysis, quality control.</li>
+            <li><span class="highlight">Healthcare:</span> Medical research, patient data analysis.</li>
+            <li><span class="highlight">Government:</span> Census analysis, policy formulation.</li>
+        </ul>
+    </div>
+</div>
+
+<!-- Formulas and Computational Concepts -->
+<div class="section" id="formulas">
+    <h2>Formulas and Computational Concepts</h2>
+    <div class="content">
+        <p>Key formulas used in descriptive statistics include:</p>
+        <ul>
+            <li><span class="formula">Mean (μ or x̄):</span> \( \bar{x} = \frac{1}{n} \sum_{i=1}^{n} x_i \)</li>
+            <li><span class="formula">Median:</span> Middle value in an ordered list of numbers.</li>
+            <li><span class="formula">Mode:</span> The number that appears most frequently in a data set.</li>
+            <li><span class="formula">Range:</span> \( \text{Range} = \text{Max} - \text{Min} \)</li>
+            <li><span class="formula">Variance (σ² or s²):</span> \( s^2 = \frac{\sum (x_i - \bar{x})^2}{n-1} \)</li>
+            <li><span class="formula">Standard Deviation (σ or s):</span> \( s = \sqrt{\frac{\sum (x_i - \bar{x})^2}{n-1}} \)</li>
+            <li><span class="formula">Interquartile Range (IQR):</span> \( \text{IQR} = Q_3 - Q_1 \)</li>
+        </ul>
+        <p>These formulas are used to calculate various aspects of a data set, providing a foundation for both simple insights and complex analysis.</p>
+        <p>Where the symbols represent:</p>
+        <ul>
+            <li>\( \bar{x} \): Sample mean</li>
+            <li>\( x_i \): Each individual value in the sample</li>
+            <li>\( n \): Sample size (number of values in the sample)</li>
+            <li>Max: Maximum value in the data set</li>
+            <li>Min: Minimum value in the data set</li>
+            <li>\( s^2 \): Sample variance</li>
+            <li>\( s \): Sample standard deviation</li>
+            <li>\( Q_1 \): First quartile (25th percentile)</li>
+            <li>\( Q_3 \): Third quartile (75th percentile)</li>
+            <li>IQR: Interquartile Range</li>
+        </ul>
+    </div>
+</div>
+
+<!-- ASCII Art Footer -->
+<pre style="font-size: 20px; margin-top: 50px;">
+__/\\\________________________/\\\\\\_____/\\\\\\_______________________________________________________________________        
+ _\/\\\_______________________\////\\\____\////\\\_______________________________________________________________________       
+  _\/\\\__________________________\/\\\_______\/\\\__________________/\\\______________________________/\\\_____/\\\______      
+   _\/\\\_________/\\\\\\\\\_______\/\\\_______\/\\\_____/\\\\\\\\\\_\///___/\\/\\\\\\____/\\/\\\\\\___\///___/\\\\\\\\\\\_     
+    _\/\\\\\\\\\__\////////\\\______\/\\\_______\/\\\____\/\\\//////___/\\\_\/\\\////\\\__\/\\\////\\\___/\\\_\////\\\////__    
+     _\/\\\////\\\___/\\\\\\\\\\_____\/\\\_______\/\\\____\/\\\\\\\\\\_\/\\\_\/\\\__\//\\\_\/\\\__\//\\\_\/\\\____\/\\\______   
+      _\/\\\__\/\\\__/\\\/////\\\_____\/\\\_______\/\\\____\////////\\\_\/\\\_\/\\\___\/\\\_\/\\\___\/\\\_\/\\\____\/\\\_/\\__  
+       _\/\\\\\\\\\__\//\\\\\\\\/\\__/\\\\\\\\\__/\\\\\\\\\__/\\\\\\\\\\_\/\\\_\/\\\___\/\\\_\/\\\___\/\\\_\/\\\____\//\\\\\___ 
+        _\/////////____\////////\//__\/////////__\/////////__\//////////__\///__\///____\///__\///____\///__\///______\/////____
+</pre>
+
+</body>
+</html>
