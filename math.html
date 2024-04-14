@@ -171,18 +171,99 @@ function calculateSpread() {
 </script>
 
 
-<!-- Graphical Summaries -->
+<!-- Graphical Summaries Section with clickable graph types -->
 <div class="section" id="graphicalSummaries">
     <h2>5. Graphical Summaries</h2>
     <div class="content">
-        <p>Graphical representations such as the following are used to visualize data:</p>
         <ul>
-            <li><span class="highlight">Histograms:</span> Show the frequency of data points within certain ranges.</li>
-            <li><span class="highlight">Box Plots:</span> Summarize data using the median, quartiles, and extremes.</li>
-            <li><span class="highlight">Scatter Plots:</span> Indicate the relationship between two variables.</li>
+            <li><span class="highlight" onclick="showImageModal('histogramModal')">Histograms:</span> Show the frequency of data points within certain ranges.</li>
+            <li><span class="highlight" onclick="showImageModal('boxPlotModal')">Box Plots:</span> Summarize data using the median, quartiles, and extremes.</li>
+            <li><span class="highlight" onclick="showImageModal('scatterPlotModal')">Scatter Plots:</span> Indicate the relationship between two variables.</li>
         </ul>
     </div>
 </div>
+
+<!-- Image Modals -->
+<div id="histogramModal" class="image-modal" style="display:none;">
+    <span onclick="closeImageModal('histogramModal')" class="close">&times;</span>
+    <img class="modal-content" id="histogramImg" src="https://media.labxchange.org/xblocks/lb-LabXchange-10d3270e-html-1/asp_data-images_nicole_4-data-viz-2-slide-41626857344807-bf4f93458c4a9d0b7f740df3081571c9.png">
+    <div id="caption">Histogram Example</div>
+</div>
+
+<div id="boxPlotModal" class="image-modal" style="display:none;">
+    <span onclick="closeImageModal('boxPlotModal')" class="close">&times;</span>
+    <img class="modal-content" id="boxPlotImg" src="https://web.pdx.edu/~stipakb/download/PA551/boxplot_files/boxplot5.jpg">
+    <div id="caption">Box Plot Example</div>
+</div>
+
+<div id="scatterPlotModal" class="image-modal" style="display:none;">
+    <span onclick="closeImageModal('scatterPlotModal')" class="close">&times;</span>
+    <img class="modal-content" id="scatterPlotImg" src="https://www.mathsisfun.com/data/images/scatter-ice-cream1.svg">
+    <div id="caption">Scatter Plot Example</div>
+</div>
+
+<script>
+// Function to show the image modal
+function showImageModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "block";
+}
+
+// Function to close the image modal
+function closeImageModal(modalId) {
+    var modal = document.getElementById(modalId);
+    modal.style.display = "none";
+}
+</script>
+
+<style>
+/* Style for the image modal */
+.image-modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    padding-top: 100px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.9);
+}
+
+/* Style for the image modal content */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+/* Style for the close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Caption text below the image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+</style>
+
 
 <!-- Applications of Descriptive Statistics -->
 <div class="section" id="applicationsOfStats">
