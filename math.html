@@ -108,19 +108,68 @@
     </div>
 </div>
 
-<!-- Measures of Spread -->
+<!-- Measures of Spread Section -->
 <div class="section" id="measuresOfSpread">
     <h2>4. Measures of Spread</h2>
     <div class="content">
-        <p>These measures describe the variability or spread of data points:</p>
-        <ul>
-            <li><span class="highlight">Range:</span> Difference between the highest and lowest values.</li>
-            <li><span class="highlight">Interquartile Range (IQR):</span> Measures the middle 50% of a data set, calculated as Q3 - Q1.</li>
-            <li><span class="highlight">Standard Deviation:</span> Indicates how much the observations differ from the mean.</li>
-            <li><span class="highlight">Variance:</span> The average of the squared differences from the Mean.</li>
-        </ul>
+        <p>Enter your own values (separated by commas) to calculate the measures of spread:</p>
+        <input type="text" id="dataInput" value="4, 8, 15, 16, 23, 42" style="width: 300px;">
+        <button onclick="calculateSpread()">Calculate</button>
+        <div id="spreadResults">
+            <!-- The calculation results will be displayed here -->
+        </div>
     </div>
 </div>
+
+<script>
+function calculateSpread() {
+    // Parse the user input into an array of numbers
+    var input = document.getElementById('dataInput').value;
+    var data = input.split(',').map(function(item) {
+        return parseFloat(item.trim());
+    }).filter(function(item) {
+        // Filter out non-numeric values
+        return !isNaN(item);
+    });
+
+    // Sort the array to facilitate finding the median and quartiles
+    data.sort(function(a, b) {
+        return a - b;
+    });
+
+    // Calculate range
+    var maxVal = Math.max(...data);
+    var minVal = Math.min(...data);
+    var range = maxVal - minVal;
+
+    // Calculate Q1 and Q3 for IQR
+    var q1 = data[Math.floor((data.length / 4))];
+    var q3 = data[Math.ceil((data.length * (3 / 4))) - 1];
+    var iqr = q3 - q1;
+
+    // Calculate mean
+    var sum = data.reduce((a, b) => a + b, 0);
+    var mean = sum / data.length;
+    
+    // Calculate variance
+    var squaredDiffs = data.map(x => Math.pow(x - mean, 2));
+    var varianceSum = squaredDiffs.reduce((a, b) => a + b, 0);
+    var variance = varianceSum / (data.length - 1);
+
+    // Calculate standard deviation
+    var stdDev = Math.sqrt(variance);
+
+    // Display the results with workings
+    document.getElementById('spreadResults').innerHTML = `
+        <p><strong>Range:</strong> ${range} (Calculated as the difference between the highest value ${maxVal} and the lowest value ${minVal})</p>
+        <p><strong>Interquartile Range (IQR):</strong> ${iqr} (Calculated as the difference between Q3 (${q3}) and Q1 (${q1}))</p>
+        <p><strong>Standard Deviation:</strong> ${stdDev.toFixed(2)} (Calculated as the square root of the variance)</p>
+        <p><strong>Variance:</strong> ${variance.toFixed(2)} (Calculated as the average of the squared differences from the Mean)</p>
+        <p>Detailed working for Variance (squared differences): [${squaredDiffs.map(x => x.toFixed(2)).join(', ')}]</p>
+    `;
+}
+</script>
+
 
 <!-- Graphical Summaries -->
 <div class="section" id="graphicalSummaries">
